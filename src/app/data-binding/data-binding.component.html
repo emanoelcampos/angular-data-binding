@@ -58,7 +58,7 @@
       </div>
     </article>
 
-</section>-->
+</section>
 
 <section class="event-binding">
 
@@ -91,6 +91,34 @@
     </div>
   </article>
 
+</section>-->
+
+<section class="two-way-binding">
+  <article>
+    <h3>Two-way Data Binding</h3>
+    <div>
+      <input type="text" #input
+      [value]="nome"
+      (input)="nome= $any(input).value"
+      >
+
+      <input type="text"
+      [ngModel]="nome"
+      (ngModelChange)="nome= $any($event)"
+      >
+
+      <input type="text" [(ngModel)]="nome">
+
+      <p>Você digitou: {{ nome }}</p>
+
+      <div>
+        <p>Meu nome é {{ pessoa.nome }} e tenho {{ pessoa.idade }} anos de idade.</p>
+        <input type="text" [(ngModel)]="pessoa.nome">
+        <input type="text" [(ngModel)]="pessoa.idade">
+      </div>
+
+    </div>
+  </article>
 </section>
 
 
